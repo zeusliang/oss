@@ -1,0 +1,5 @@
+# create user table
+CREATE TABLE user(
+  id int primary autoinclrement,
+  
+);

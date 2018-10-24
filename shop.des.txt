@@ -1,0 +1,67 @@
+用户标 user
+字段  数据类型   主键  空 自增  附加      说明
+id    int         yes  no  yes		  
+name  string(20)  no   no  no
+email string(20)  no   no  no   unique
+passwd string(11) no   no  no   
+
+
+商品表 goods
+字段          数据类型   主键  空 自增  附加    说明
+id            int       yes  no  yes
+goods_id      string()  no   no   no   unique   商品id/商品详情id
+prices        int        no   no  no    	    商品单价
+category_id   int       no   no   no   unique   商品种类id
+
+
+商品种类表 category
+字段          数据类型   主键  空 自增  附加    说明
+id            int         yes  no   yes           
+category_id   int	no     no  no   unique   商品种类id
+
+
+
+mobile详情表 goods_details
+字段          数据类型   主键  空 自增  附加    说明
+id            int         yes  no   yes           
+details_id    string     no   no   no    	商品详情id/商品id
+category_id   int	 no     no  no   unique   商品种类id
+brand        string      no    no   no   	商品品牌
+height         int       no     no   no   	商品高度/厚度
+wide        int        no     no  no           商品宽度
+length        int        no     no  no           商品长度
+weight        int        no     no  no           商品重量
+imgs_id	    int   	no    no   no    unique	 商品图片
+
+
+商品图片表 goods_imgs
+字段          数据类型   主键  空 自增  附加    说明
+id            int         yes  no   yes           
+imgs_id	    int   	no    no   no    unique	 商品图片
+img_path    string      no   no   no             图片
+
+
+
+库存表 inventory
+字段          数据类型   主键  空 自增  附加    说明
+id            int         yes  no   yes           
+goods_id      string()   no   no   no   unique   商品id/商品详情id
+inventory      int       no    no  no   no       商品库存
+
+
+
+订单表 order
+字段          数据类型   主键  空 自增  附加    说明
+id            int         yes  no   yes           
+user_id		int 	 no    no   no   unique  
+order_id	int	  no   no  no    unique
+number		int      no    no   no    no      购买的商品数量
+goods_id      string()   no   no   no   unique   商品id/商品详情id
+pay_status     int      no    no  no    default=0  支付状态
+logistics_id   int     no     no  no   	no	  物流id
+
+
+
+
+  
+
